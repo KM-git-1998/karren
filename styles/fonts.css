@@ -1,4 +1,4 @@
-/* fonts.css - フォント管理ファイル */
+/* fonts.css - フォント管理ファイル（パス修正版） */
 
 /* BIOWEAPON フォント - ヘッダータイトル用 */
 @font-face {
@@ -16,4 +16,18 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+/* フォント読み込み確認用のスタイル */
+body {
+  font-family: 'Honoka', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+}
+
+/* フォントファイルが見つからない場合のフォールバック設定 */
+.font-bioweapon {
+  font-family: 'BIOWEAPON', 'Arial Black', Impact, serif;
+}
+
+.font-honoka {
+  font-family: 'Honoka', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
 }
