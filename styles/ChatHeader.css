@@ -1,0 +1,28 @@
+/* ChatHeader.css - ヘッダー専用スタイル */
+
+/* 色変数をインポート */
+@import url('./colors.css');
+@import url('./fonts.css');
+
+.chat-header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: calc(45px + env(safe-area-inset-top, 0px));
+  background-color: var(--text-color);
+  border-bottom: 5px solid var(--accent-color);
+  padding: calc(env(safe-area-inset-top, 0px)) 1rem 1rem 1rem;
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+.chat-title {
+  margin: 0;
+  font-family: 'BIOWEAPON', serif;
+  font-size: 2rem;
+  font-weight: normal;
+  color: var(--accent-color);
+  text-align: center;
+}

@@ -1,0 +1,19 @@
+/* fonts.css - フォント管理ファイル */
+
+/* BIOWEAPON フォント - ヘッダータイトル用 */
+@font-face {
+  font-family: 'BIOWEAPON';
+  src: url('../fonts/BIOWEAPON.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Honoka フォント - メイン用 */
+@font-face {
+  font-family: 'Honoka';
+  src: url('../fonts/Honoka-Shin-Maru-Gothic_R.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

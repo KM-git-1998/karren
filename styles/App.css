@@ -1,0 +1,152 @@
+/* App.css - アプリ全体の基本設定 */
+
+/* 色変数をインポート */
+@import url('./colors.css');
+
+/* 基本レイアウト設定 */
+html {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-color); /* ダーク調で統一 */
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-color); /* ダーク調で統一 */
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--primary-color); /* ダーク調で統一 */
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--primary-color); /* ダーク調で統一 */
+}
+
+/* 入力要素のカーソル制御 */
+textarea, input {
+  font-size: 16px; /* iOS Safari ズーム防止 */
+  caret-color: var(--text-color);
+  -webkit-user-select: text;
+  user-select: text;
+  outline: none;
+  color: var(--text-color);
+}
+
+/* その他の要素はカーソル非表示 */
+*:not(textarea):not(input) {
+  caret-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  outline: none;
+}
+
+/* スムーズスクロール */
+html {
+  scroll-behavior: smooth;
+}
+
+/* フォーカス時のアウトライン調整 */
+input:focus,
+button:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* textareaは個別に設定するため除外 */
+textarea:focus {
+  outline: none;
+}
+
+/* ボタンのデフォルトスタイルリセット */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* 選択テキストの色 */
+::selection {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+::-moz-selection {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+/* iOS Safari 特有の問題対策 */
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari でのタップハイライト無効化 */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* iOS Safari でのバウンススクロール制御 */
+  body {
+    overscroll-behavior: contain;
+  }
+}
+
+/* レスポンシブタイポグラフィ */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* アクセシビリティ: motion の設定 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 印刷時の調整 */
+@media print {
+  html,
+  body {
+    height: auto;
+    overflow: visible;
+  }
+  
+  .App {
+    height: auto;
+    min-height: auto;
+  }
+}
